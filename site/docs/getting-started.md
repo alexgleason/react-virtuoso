@@ -1,7 +1,7 @@
 ---
 id: getting-started
 title: Getting Started with React Virtuoso
-sidebar_label: Getting Started 
+sidebar_label: Getting Started
 slug: /
 ---
 
@@ -22,7 +22,7 @@ To start, install `react-virtuoso` in your React project. The package exports th
 npm install react-virtuoso
 ```
 
-Add the Component to your application. 
+Add the Component to your application.
 
 ```jsx
 import * as React from 'react'
@@ -111,7 +111,7 @@ Check the [Basic Table](/hello-table) example for a sample implementation.
 ### Grid
 
 The `VirtuosoGrid` component displays **same sized items** in multiple columns.
-The layout and item sizing is controlled CSS class properties or styled containers, 
+The layout and item sizing is controlled CSS class properties or styled containers,
 which allows you to use media queries, min-width, percentage, etc.
 
 Check the [responsive grid columns](/grid-responsive-columns) example for a sample implementation.
@@ -129,7 +129,7 @@ Check the [footer](/footer), [press load more](/press-to-load-more) and [endless
 ### Pinned Items
 
 The `Virtuoso` component accepts an optional `topItems` property that specifies
-how many items must remain "pinned" at the top of the list. 
+how many items must remain "pinned" at the top of the list.
 Check the [top items](/top-items) example.
 
 ### Scroll to Index
@@ -148,12 +148,12 @@ You can swap the Virtuoso scroller implementation to add custom scroll logic or 
 
 Check the [custom scroll container](/custom-scroll-container) example for a starting point.
 
-## Performance 
+## Performance
 
 Several factors affect the component's performance.
 The first and most important one is the _size of the visible area_.
 Redrawing more items takes more time and reduces the frame rate.
-To see if this affects you, reduce the component width or height; 
+To see if this affects you, reduce the component width or height;
 Set the `style` property to something like `{{width: '200px'}}`.
 
 Next, if the items are complex or slow to render, use [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) for the `itemContent` contents.
@@ -192,7 +192,7 @@ In a nutshell, increasing the `overscan` causes less frequent re-renders,
 but makes each re-render more expensive (because more items will get replaced).
 
 Loading images and displaying complex components while scrolling can cause jank.
-To fix that, you can hook to the `scrollingStateChange` callback and replace
+To fix that, you can hook to the `isScrolling` callback and replace
 the problematic content in the item with a simplified one.
 Check the [scroll handling example](/scroll-handling) for a possible implementation.
 
